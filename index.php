@@ -4,6 +4,7 @@
      if (isset($_GET["lunghezza_password"])){
           // creo una variabile che chiamo lunghezza
         $lunghezza = $_GET["lunghezza_password"];
+        // richiamo la mia funzione
         $miaPassword = createdPassword($lunghezza);
          
      }
@@ -34,6 +35,7 @@
                       <div class="col-12">
                             <button type="submit" class="btn btn-primary mt-5">invia</button>
                       </div>
+                      <!-- mostro a schermo la mia password -->
                       <div class="mt-5 text-primary"><?php echo "la tua Password è: $miaPassword"?></div>
                  </div>
              </div>
