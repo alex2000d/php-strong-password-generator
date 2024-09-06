@@ -1,25 +1,11 @@
 <?php
+       include 'function.php';
+
      if (isset($_GET["lunghezza_password"])){
           // creo una variabile che chiamo lunghezza
         $lunghezza = $_GET["lunghezza_password"];
-
-          // creo la mia funzione per generare la password randomicamente
-           function createdPassword($lunghezza){
-            // creo la variabile che contiene la stringa con i caratteri
-             $caratteri ="abcdefghilmnopqrstuvzABCDEFGHILMNOPQRSTUVZ123456789?!&/%";
-              $password = "";
-            //   creo un for per ciclare i miei caratteri randomicamente
-               for ($i = 0; $i < $lunghezza; $i++){
-                // creo una variabile per la selezione random della lunghezza della mia stringa meno 1
-                 $selection = rand(0,strlen($caratteri) -1);
-                //  concateno tutto qui
-                 $password .= $caratteri[$selection];
-
-               }
-               // restituisco il risultato
-                 return $password;
-                 echo $password;
-           }
+        $miaPassword = createdPassword($lunghezza);
+         
      }
 ?>
 
@@ -48,7 +34,7 @@
                       <div class="col-12">
                             <button type="submit" class="btn btn-primary mt-5">invia</button>
                       </div>
-                      <div><?php echo $password?></div>
+                      <div class="mt-5 text-primary"><?php echo "la tua Password è: $miaPassword"?></div>
                  </div>
              </div>
           </div>
